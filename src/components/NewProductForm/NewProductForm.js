@@ -30,7 +30,11 @@ export default class NewProductForm extends Component {
 	render() {
 		const { productCode, qty, price } = this.state;
 		return (
-			<form className="NewProductForm" onSubmit={this.handleSubmit}>
+			<form
+				className="NewProductForm"
+				autocomplete="off"
+				onSubmit={this.handleSubmit}
+			>
 				<div className="NewProductForm-productCode">
 					<label htmlFor="productCode">Product Code</label>
 					<input
@@ -49,8 +53,9 @@ export default class NewProductForm extends Component {
 					<label htmlFor="qty">Quantity</label>
 					<input
 						required
-						type="text"
-						maxLength="18"
+						type="number"
+						min="0"
+						max="9999"
 						placeholder="Required quantity"
 						value={qty}
 						id="qty"
