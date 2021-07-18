@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NewProductForm from '../NewProductForm/NewProductForm';
 import Product from '../Product/Product';
 
-import './ProductList.css';
+import './styles/ProductList.css';
 
 export default class ProductList extends Component {
 	constructor(props) {
@@ -41,7 +41,14 @@ export default class ProductList extends Component {
 			<main>
 				<div className="ProductList">
 					<div className="ProductList-form">
-						<h1>Product Lookup App</h1>
+						<div className="ProductList-title">
+							<h1>Product Lookup App</h1>
+							<div className="ProductList-title-dots">
+								<i class="fas fa-circle"></i>
+								<i class="fas fa-circle"></i>
+								<i class="fas fa-circle"></i>
+							</div>
+						</div>
 						<NewProductForm createProduct={this.create} />
 					</div>
 					<div className="ProductList-list">

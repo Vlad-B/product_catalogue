@@ -1,6 +1,6 @@
 main {
   height: 100%;
-  background-color: #f9f9fb;
+  background-color: #F9F9FB;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,7 +14,14 @@ main {
 }
 
 main .ProductList {
-  height: 70%;
+  height: 80%;
+  width: 80%;
+  margin: 0 auto;
+  padding: .4rem;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 8px 28px 5px rgba(62, 31, 146, 0.26);
+          box-shadow: 1px 8px 28px 5px rgba(62, 31, 146, 0.26);
+  border-radius: 20px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 0.7fr 1fr;
@@ -23,13 +30,35 @@ main .ProductList {
       grid-template-rows: auto;
 }
 
-main .ProductList h1 {
-  margin-bottom: .5em;
+main .ProductList .ProductList-title h1 {
+  margin: 1rem 0 2.5rem;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+main .ProductList .ProductList-title .ProductList-title-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .ProductList .ProductList-title .ProductList-title-dots i {
+  width: 90px;
+  font-size: 1.3rem;
+  color: #FF4D5D;
+  text-align: center;
 }
 
 main .ProductList .ProductList-form {
-  border-radius: 0 10px 10px 0;
-  padding: 2em;
+  border-radius: 20px;
+  padding: 2rem;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -38,12 +67,15 @@ main .ProductList .ProductList-form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background-color: #3E1F92;
 }
 
 main .ProductList .ProductList-list {
   color: #000;
-  padding: 2em;
+  padding: 2rem;
   height: 100%;
   background-color: #fff;
   display: -webkit-box;

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './styles/NewProductForm.css';
+
 export default class NewProductForm extends Component {
 	constructor(props) {
 		super(props);
@@ -29,40 +31,46 @@ export default class NewProductForm extends Component {
 		const { productCode, qty, price } = this.state;
 		return (
 			<form className="NewProductForm" onSubmit={this.handleSubmit}>
-				<label htmlFor="productCode">Product Code</label>
-				<input
-					required
-					type="text"
-					placeholder="Add new product code"
-					value={productCode}
-					id="productCode"
-					name="productCode"
-					onChange={this.handleChange}
-				/>
+				<div className="NewProductForm-productCode">
+					<label htmlFor="productCode">Product Code</label>
+					<input
+						required
+						type="text"
+						placeholder="Add new product code"
+						value={productCode}
+						id="productCode"
+						name="productCode"
+						onChange={this.handleChange}
+					/>
+				</div>
 
-				<label htmlFor="qty">Quantity</label>
-				<input
-					required
-					type="text"
-					placeholder="Required quantity"
-					value={qty}
-					id="qty"
-					name="qty"
-					onChange={this.handleChange}
-				/>
+				<div className="NewProductForm-quantity">
+					<label htmlFor="qty">Quantity</label>
+					<input
+						required
+						type="text"
+						placeholder="Required quantity"
+						value={qty}
+						id="qty"
+						name="qty"
+						onChange={this.handleChange}
+					/>
+				</div>
 
-				<label htmlFor="price">Price</label>
-				<input
-					required
-					type="number"
-					placeholder="Price"
-					value={price}
-					id="price"
-					name="price"
-					onChange={this.handleChange}
-				/>
+				<div className="NewProductForm-price">
+					<label htmlFor="price">Price</label>
+					<input
+						required
+						type="number"
+						placeholder="Price"
+						value={price}
+						id="price"
+						name="price"
+						onChange={this.handleChange}
+					/>
+				</div>
 
-				<button>Add Todo</button>
+				<button>Add Product</button>
 			</form>
 		);
 	}

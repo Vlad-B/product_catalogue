@@ -1,0 +1,60 @@
+form {
+  height: 80%;
+  padding: 3rem 0 1rem;
+  text-align: start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  justify-items: center;
+}
+
+form label {
+  display: block;
+  font-size: .9rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: .5rem;
+  margin-left: .4rem;
+}
+
+form input {
+  width: 100%;
+  padding: .3rem;
+  padding-left: .8rem;
+  border: none;
+  outline: none;
+  border-radius: 2rem;
+  font-family: 'Poppins', sans-serif;
+  color: #5C6086;
+  font-size: 1em;
+}
+
+form button {
+  width: 70%;
+  height: 3.3rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #FA949D;
+  outline: none;
+  border: none;
+  border-radius: 2rem;
+  -webkit-transition-duration: .4s;
+          transition-duration: .4s;
+}
+
+form button:hover {
+  background-color: #FF4D5D;
+  cursor: pointer;
+}
+/*# sourceMappingURL=NewProductForm.css.map */
