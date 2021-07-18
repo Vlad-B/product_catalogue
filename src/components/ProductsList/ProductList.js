@@ -18,11 +18,22 @@ export default class ProductList extends Component {
 	}
 
 	render() {
+		const products = this.state.productList.map((product, idx) => {
+			return (
+				<Product
+					key={idx}
+					id={idx}
+					productCode={product.productCode}
+					qty={product.qty}
+					price={product.price}
+				/>
+			);
+		});
 		return (
 			<div>
 				<h1>Product Lookup App</h1>
 				<NewProductForm createProduct={this.create} />
-				<ul>Product list goes here</ul>
+				<ul>{products}</ul>
 			</div>
 		);
 	}
