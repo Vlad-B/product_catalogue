@@ -26,6 +26,7 @@ export default class NewProductForm extends Component {
 	}
 
 	render() {
+		const { productCode, qty, price } = this.state;
 		return (
 			<form className="NewProductForm" onSubmit={this.handleSubmit}>
 				<label htmlFor="productCode">Product Code</label>
@@ -33,7 +34,7 @@ export default class NewProductForm extends Component {
 					required
 					type="text"
 					placeholder="Add new product code"
-					value={this.state.productCode}
+					value={productCode}
 					id="productCode"
 					name="productCode"
 					onChange={this.handleChange}
@@ -44,7 +45,7 @@ export default class NewProductForm extends Component {
 					required
 					type="text"
 					placeholder="Required quantity"
-					value={this.state.qty}
+					value={qty}
 					id="qty"
 					name="qty"
 					onChange={this.handleChange}
@@ -55,7 +56,7 @@ export default class NewProductForm extends Component {
 					required
 					type="number"
 					placeholder="Price"
-					value={this.state.price}
+					value={price}
 					id="price"
 					name="price"
 					onChange={this.handleChange}

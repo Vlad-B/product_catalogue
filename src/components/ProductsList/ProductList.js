@@ -13,18 +13,16 @@ export default class ProductList extends Component {
 	}
 
 	create(newProduct) {
+		const { productList, totalPrice } = this.state;
 		this.setState({
-			productList: [...this.state.productList, newProduct],
-			totalPrice: [...this.state.totalPrice, parseInt(newProduct.price)],
+			productList: [...productList, newProduct],
+			totalPrice: [...totalPrice, parseInt(newProduct.price)],
 		});
 	}
 
-	componentDidUpdate() {
-		console.log(this.state.totalPrice);
-	}
-
 	render() {
-		const products = this.state.productList.map((product, idx) => {
+		const { productList, totalPrice } = this.state;
+		const products = productList.map((product, idx) => {
 			return (
 				<Product
 					key={idx}
@@ -42,7 +40,7 @@ export default class ProductList extends Component {
 				<h1>Product Lookup App</h1>
 				<NewProductForm createProduct={this.create} />
 				<ul>{products}</ul>
-				<div>Total Price = {this.state.totalPrice.reduce(sum)}</div>
+				<div>Total Price = {totalPrice.reduce(sum)}</div>
 			</div>
 		);
 	}
