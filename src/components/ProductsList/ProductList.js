@@ -7,6 +7,7 @@ export default class ProductList extends Component {
 		super(props);
 		this.state = {
 			productList: [],
+			totalPrice: [0],
 		};
 		this.create = this.create.bind(this);
 	}
@@ -14,7 +15,12 @@ export default class ProductList extends Component {
 	create(newProduct) {
 		this.setState({
 			productList: [...this.state.productList, newProduct],
+			totalPrice: [...this.state.totalPrice, parseInt(newProduct.price)],
 		});
+	}
+
+	componentDidUpdate() {
+		console.log(this.state.totalPrice);
 	}
 
 	render() {
@@ -29,11 +35,14 @@ export default class ProductList extends Component {
 				/>
 			);
 		});
+
+		const sum = (sum, currVal) => sum + currVal;
 		return (
 			<div>
 				<h1>Product Lookup App</h1>
 				<NewProductForm createProduct={this.create} />
 				<ul>{products}</ul>
+				<div>Total Price = {this.state.totalPrice.reduce(sum)}</div>
 			</div>
 		);
 	}
