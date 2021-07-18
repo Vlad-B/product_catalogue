@@ -1,6 +1,6 @@
 main {
   height: 100%;
-  background-color: #F9F9FB;
+  background-color: #f9f9fb;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,26 +14,28 @@ main {
 }
 
 main .ProductList {
-  height: 80%;
   width: 80%;
   margin: 0 auto;
-  padding: .4rem;
+  padding: 0.4rem;
   background-color: #fff;
   -webkit-box-shadow: 1px 8px 28px 5px rgba(62, 31, 146, 0.26);
           box-shadow: 1px 8px 28px 5px rgba(62, 31, 146, 0.26);
   border-radius: 20px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 0.7fr 1fr;
-      grid-template-columns: 0.7fr 1fr;
+  -ms-grid-columns: 0.5fr 1fr;
+      grid-template-columns: 0.5fr 1fr;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 main .ProductList .ProductList-title h1 {
   margin: 1rem 0 2.5rem;
   text-align: center;
-  letter-spacing: 3px;
+  font-size: 1.8rem;
+  letter-spacing: 4px;
 }
 
 main .ProductList .ProductList-title .ProductList-title-dots {
@@ -52,7 +54,7 @@ main .ProductList .ProductList-title .ProductList-title-dots {
 main .ProductList .ProductList-title .ProductList-title-dots i {
   width: 90px;
   font-size: 1.3rem;
-  color: #FF4D5D;
+  color: #ff4d5d;
   text-align: center;
 }
 
@@ -70,13 +72,14 @@ main .ProductList .ProductList-form {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #3E1F92;
+  background-color: #3e1f92;
 }
 
 main .ProductList .ProductList-list {
   color: #000;
   padding: 2rem;
-  height: 100%;
+  border-radius: 20px;
+  height: 700px;
   background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -85,5 +88,71 @@ main .ProductList .ProductList-list {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  /* 
+			Tried grid, didn't work as I wanted.
+
+			display: grid;
+			gap: 3em;
+			grid-template-rows: 1fr 2fr 1fr;
+			grid-template-columns: auto;
+			align-items: center;
+			align-content: space-between; 
+			*/
+}
+
+main .ProductList .ProductList-list .ProductList-sections {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main .ProductList .ProductList-list .ProductList-sections h5 {
+  width: 20%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+main .ProductList .ProductList-list .ProductList-sections .divider {
+  border: 1px solid black;
+}
+
+main .ProductList .ProductList-list ul {
+  padding: 2rem;
+  height: 450px;
+  background-color: #e6e6e6;
+  border-radius: 20px;
+  list-style: none;
+  overflow: auto;
+  -webkit-box-shadow: 0px 9px 11px 2px rgba(0, 0, 0, 0.39);
+          box-shadow: 0px 9px 11px 2px rgba(0, 0, 0, 0.39);
+}
+
+main .ProductList .ProductList-list #custom-scroll::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+main .ProductList .ProductList-list #custom-scroll::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+}
+
+main .ProductList .ProductList-list #custom-scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #ff4d5d;
+}
+
+main .ProductList .ProductList-list .ProductList-sum {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 /*# sourceMappingURL=ProductList.css.map */

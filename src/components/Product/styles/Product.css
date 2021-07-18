@@ -1,0 +1,29 @@
+.Product {
+  height: 50px;
+  margin-bottom: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.Product span {
+  text-align: start;
+  min-width: 5rem;
+}
+
+.Product span:nth-child(1) {
+  margin-left: 2rem;
+}
+
+.Product span:last-child {
+  margin-right: 2rem;
+}
+/*# sourceMappingURL=Product.css.map */

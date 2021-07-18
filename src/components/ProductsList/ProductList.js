@@ -42,7 +42,7 @@ export default class ProductList extends Component {
 				<div className="ProductList">
 					<div className="ProductList-form">
 						<div className="ProductList-title">
-							<h1>Product Lookup App</h1>
+							<h1>Product Catalogue</h1>
 							<div className="ProductList-title-dots">
 								<i class="fas fa-circle"></i>
 								<i class="fas fa-circle"></i>
@@ -52,8 +52,20 @@ export default class ProductList extends Component {
 						<NewProductForm createProduct={this.create} />
 					</div>
 					<div className="ProductList-list">
-						<ul>{products}</ul>
-						<div>Total Price = {totalPrice.reduce(sum)}</div>
+						<div className="ProductList-sections">
+							<h5>Code</h5>
+							<span className="divider"></span>
+							<h5>Qty.</h5>
+							<span className="divider"></span>
+							<h5>Price</h5>
+						</div>
+						<ul id="custom-scroll">{products}</ul>
+						<div className="ProductList-sum">
+							{totalPrice.reduce(sum) === 0
+								? ''
+								: `£ ${totalPrice.reduce(sum)} : `}
+							Total Price
+						</div>
 					</div>
 				</div>
 			</main>
