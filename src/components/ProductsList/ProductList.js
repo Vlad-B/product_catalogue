@@ -15,10 +15,15 @@ export default class ProductList extends Component {
 	}
 
 	create(newProduct) {
+		console.log(newProduct.price);
 		const { productList, totalPrice } = this.state;
 		this.setState({
 			productList: [...productList, newProduct],
-			totalPrice: [...totalPrice, parseInt(newProduct.price)],
+			// totalPrice: [...totalPrice, parseInt(newProduct.price)],
+			totalPrice: [
+				...totalPrice,
+				parseFloat(newProduct.price.replace(/,/g, '.')),
+			],
 		});
 	}
 
@@ -36,7 +41,14 @@ export default class ProductList extends Component {
 			);
 		});
 
-		const sum = (sum, currVal) => sum + currVal;
+		// Here I calculate the totalPrice of all products and then turn the SUM into string
+		const totalPriceSum = totalPrice
+			.reduce((sum, currVal) => sum + currVal)
+			.toString();
+
+		// Now that I have the SUM as a string, I'm using this RegExp to separate the Total Price with a comma for every thousand
+		const groupSeparator = /\B(?=(\d{3})+(?!\d))/g;
+
 		return (
 			<main>
 				<div className="ProductList">
@@ -44,9 +56,9 @@ export default class ProductList extends Component {
 						<div className="ProductList-title">
 							<h1>Product Catalogue</h1>
 							<div className="ProductList-title-dots">
-								<i class="fas fa-circle"></i>
-								<i class="fas fa-circle"></i>
-								<i class="fas fa-circle"></i>
+								<i className="fas fa-circle"></i>
+								<i className="fas fa-circle"></i>
+								<i className="fas fa-circle"></i>
 							</div>
 						</div>
 						<NewProductForm createProduct={this.create} />
@@ -61,10 +73,10 @@ export default class ProductList extends Component {
 						</div>
 						<ul id="custom-scroll">{products}</ul>
 						<div className="ProductList-sum">
-							Total Price
-							{totalPrice.reduce(sum) === 0
+							Total Price:
+							{totalPriceSum.replace(groupSeparator) === 0
 								? ''
-								: ` : £ ${totalPrice.reduce(sum)}`}
+								: ` £ ${totalPriceSum.replace(groupSeparator, ',')}`}
 						</div>
 					</div>
 				</div>

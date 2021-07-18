@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CurrencyInput from 'react-currency-input-field';
 
 import './styles/NewProductForm.css';
 
@@ -29,15 +30,17 @@ export default class NewProductForm extends Component {
 
 	render() {
 		const { productCode, qty, price } = this.state;
+
 		return (
 			<form
 				className="NewProductForm"
-				autocomplete="off"
+				autoComplete="off"
 				onSubmit={this.handleSubmit}
 			>
 				<div className="NewProductForm-productCode">
 					<label htmlFor="productCode">Product Code</label>
 					<input
+						className="input"
 						required
 						type="text"
 						maxLength="18"
@@ -52,12 +55,13 @@ export default class NewProductForm extends Component {
 				<div className="NewProductForm-quantity">
 					<label htmlFor="qty">Quantity</label>
 					<input
+						className="input"
 						required
 						type="number"
 						min="0"
 						max="9999"
 						placeholder="Required quantity"
-						value={qty}
+						value={qty > 9999 ? 9999 : qty}
 						id="qty"
 						name="qty"
 						onChange={this.handleChange}
@@ -66,7 +70,26 @@ export default class NewProductForm extends Component {
 
 				<div className="NewProductForm-price">
 					<label htmlFor="price">Price</label>
+					<CurrencyInput
+						className="input"
+						required
+						id="price"
+						name="price"
+						value={price}
+						groupSeparator=","
+						decimalSeparator="."
+						placeholder="Please enter a number"
+						prefix="£"
+						defaultValue={1000}
+						decimalsLimit={2}
+						onValueChange={(value, name) => this.setState({ [name]: value })}
+					/>
+				</div>
+
+				{/* <div className="NewProductForm-price">
+					<label htmlFor="price">Price</label>
 					<input
+						className="input"
 						required
 						type="number"
 						placeholder="Price"
@@ -75,7 +98,7 @@ export default class NewProductForm extends Component {
 						name="price"
 						onChange={this.handleChange}
 					/>
-				</div>
+				</div> */}
 
 				<button>Add Product</button>
 			</form>
