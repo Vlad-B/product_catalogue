@@ -36,6 +36,7 @@ export default class NewProductForm extends Component {
 					<input
 						required
 						type="text"
+						maxLength="18"
 						placeholder="Add new product code"
 						value={productCode}
 						id="productCode"
@@ -49,6 +50,7 @@ export default class NewProductForm extends Component {
 					<input
 						required
 						type="text"
+						maxLength="18"
 						placeholder="Required quantity"
 						value={qty}
 						id="qty"
