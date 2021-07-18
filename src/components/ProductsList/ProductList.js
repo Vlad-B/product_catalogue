@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import NewProductForm from '../NewProductForm/NewProductForm';
 import Product from '../Product/Product';
 
+import './ProductList.css';
+
 export default class ProductList extends Component {
 	constructor(props) {
 		super(props);
@@ -36,12 +38,18 @@ export default class ProductList extends Component {
 
 		const sum = (sum, currVal) => sum + currVal;
 		return (
-			<div>
-				<h1>Product Lookup App</h1>
-				<NewProductForm createProduct={this.create} />
-				<ul>{products}</ul>
-				<div>Total Price = {totalPrice.reduce(sum)}</div>
-			</div>
+			<main>
+				<div className="ProductList">
+					<div className="ProductList-form">
+						<h1>Product Lookup App</h1>
+						<NewProductForm createProduct={this.create} />
+					</div>
+					<div className="ProductList-list">
+						<ul>{products}</ul>
+						<div>Total Price = {totalPrice.reduce(sum)}</div>
+					</div>
+				</div>
+			</main>
 		);
 	}
 }
