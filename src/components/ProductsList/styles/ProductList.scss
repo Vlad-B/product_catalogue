@@ -1,21 +1,21 @@
 main {
 	height: 100%;
-	background-color: #f9f9fb;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	background-color: #f9f9fb;
 
 	.ProductList {
 		width: 80%;
 		margin: 0 auto;
 		padding: 0.4rem;
-		background-color: #fff;
-		box-shadow: 1px 8px 28px 5px rgba(62, 31, 146, 0.26);
-		border-radius: 20px;
 		display: grid;
 		grid-template-columns: 0.5fr 1fr;
 		grid-template-rows: auto;
 		align-content: center;
+		background-color: #fff;
+		box-shadow: 1px 8px 28px 5px rgba(62, 31, 146, 0.26);
+		border-radius: 20px;
 
 		.ProductList-title {
 			h1 {
@@ -33,31 +33,31 @@ main {
 				i {
 					width: 90px;
 					font-size: 1.3rem;
-					color: #ff4d5d;
 					text-align: center;
+					color: #ff4d5d;
 				}
 			}
 		}
 
 		.ProductList-form {
-			border-radius: 20px;
-			padding: 2rem;
 			height: 100%;
+			padding: 2rem;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
+			border-radius: 20px;
 			background-color: #3e1f92;
 		}
 
 		.ProductList-list {
-			color: #000;
-			padding: 2rem;
-			border-radius: 20px;
 			height: 700px;
-			background-color: #fff;
+			padding: 2rem;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
+			background-color: #fff;
+			color: #000;
+			border-radius: 20px;
 
 			/* 
 			Tried grid, didn't work as I wanted.
@@ -86,13 +86,13 @@ main {
 			}
 
 			ul {
-				padding: 2rem;
 				height: 450px;
-				background-color: #e6e6e6;
-				border-radius: 20px;
+				padding: 2rem;
 				list-style: none;
 				overflow: auto;
+				background-color: #e6e6e6;
 				box-shadow: 0px 9px 11px 2px rgba(0, 0, 0, 0.39);
+				border-radius: 20px;
 			}
 
 			#custom-scroll::-webkit-scrollbar-track {
@@ -113,7 +113,8 @@ main {
 			}
 
 			.ProductList-sum {
-				align-self: flex-end;
+				align-self: flex-start;
+				font-size: 2rem;
 			}
 		}
 	}

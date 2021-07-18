@@ -61,10 +61,10 @@ export default class ProductList extends Component {
 						</div>
 						<ul id="custom-scroll">{products}</ul>
 						<div className="ProductList-sum">
+							Total Price
 							{totalPrice.reduce(sum) === 0
 								? ''
-								: `£ ${totalPrice.reduce(sum)} : `}
-							Total Price
+								: ` : £ ${totalPrice.reduce(sum)}`}
 						</div>
 					</div>
 				</div>
