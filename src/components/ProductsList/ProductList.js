@@ -24,11 +24,12 @@ export default class ProductList extends Component {
 
 	render() {
 		const { productList, totalPrice } = this.state;
-		const products = productList.map((product, idx) => {
+		const products = productList.map((product) => {
+			console.log(product);
 			return (
 				<Product
-					key={idx}
-					id={idx}
+					key={product.id}
+					id={product.id}
 					productCode={product.productCode}
 					qty={product.qty}
 					price={product.price}
@@ -67,11 +68,12 @@ export default class ProductList extends Component {
 							<h5>Price</h5>
 						</div>
 						<ul id="custom-scroll">
-							{!productList.length === 0 ? (
+							{products}
+							{/* {!productList.length === 0 ? (
 								products
 							) : (
 								<p className="ProductList-placeholder">So empty...</p>
-							)}
+							)} */}
 						</ul>
 						<div className="ProductList-sum">
 							Total Price:
