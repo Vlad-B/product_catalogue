@@ -66,7 +66,13 @@ export default class ProductList extends Component {
 							<span className="divider"></span>
 							<h5>Price</h5>
 						</div>
-						<ul id="custom-scroll">{products}</ul>
+						<ul id="custom-scroll">
+							{!productList.length === 0 ? (
+								products
+							) : (
+								<p className="ProductList-placeholder">So empty...</p>
+							)}
+						</ul>
 						<div className="ProductList-sum">
 							Total Price:
 							{totalPriceSum.replace(groupSeparator) === 0

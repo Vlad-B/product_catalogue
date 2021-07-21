@@ -6,6 +6,7 @@ export default class Product extends Component {
 	render() {
 		const { productCode, qty, price } = this.props;
 		const groupSeparator = /\B(?=(\d{3})+(?!\d))/g;
+		console.log(this.props);
 		return (
 			<li className="Product">
 				<span>{productCode}</span>
