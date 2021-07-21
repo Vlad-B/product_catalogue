@@ -18,7 +18,10 @@ export default class ProductList extends Component {
 		const { productList, totalPrice } = this.state;
 		this.setState({
 			productList: [...productList, newProduct],
-			totalPrice: [...totalPrice, parseInt(newProduct.price)],
+			totalPrice: [
+				...totalPrice,
+				parseFloat(newProduct.price.replace(/,/g, '.')),
+			],
 		});
 	}
 
