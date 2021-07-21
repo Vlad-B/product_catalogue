@@ -25,7 +25,6 @@ export default class ProductList extends Component {
 	render() {
 		const { productList, totalPrice } = this.state;
 		const products = productList.map((product) => {
-			console.log(product);
 			return (
 				<Product
 					key={product.id}
@@ -36,6 +35,8 @@ export default class ProductList extends Component {
 				/>
 			);
 		});
+
+		console.log(productList.length);
 
 		// Here I calculate the totalPrice of all products and then turn the SUM into string
 		const totalPriceSum = totalPrice
@@ -68,12 +69,11 @@ export default class ProductList extends Component {
 							<h5>Price</h5>
 						</div>
 						<ul id="custom-scroll">
-							{products}
-							{/* {!productList.length === 0 ? (
+							{productList.length > 0 ? (
 								products
 							) : (
 								<p className="ProductList-placeholder">So empty...</p>
-							)} */}
+							)}
 						</ul>
 						<div className="ProductList-sum">
 							Total Price:
