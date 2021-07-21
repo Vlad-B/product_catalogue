@@ -43,7 +43,7 @@ export default class NewProductForm extends Component {
 						className="input"
 						required
 						type="text"
-						maxLength="18"
+						maxLength="15"
 						placeholder="Add new product code"
 						value={productCode}
 						id="productCode"
