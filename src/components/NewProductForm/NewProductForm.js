@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import CurrencyInput from 'react-currency-input-field';
 
 import './styles/NewProductForm.css';
