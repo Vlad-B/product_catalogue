@@ -36,8 +36,6 @@ export default class ProductList extends Component {
 			);
 		});
 
-		console.log(productList.length);
-
 		// Here I calculate the totalPrice of all products and then turn the SUM into string
 		const totalPriceSum = totalPrice
 			.reduce((sum, currVal) => sum + currVal)
