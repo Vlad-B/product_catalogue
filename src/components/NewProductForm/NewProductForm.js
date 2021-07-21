@@ -24,9 +24,8 @@ export default class NewProductForm extends Component {
 
 	handleSubmit(evt) {
 		evt.preventDefault();
-		console.log(evt.price);
-		this.props.createProduct({ ...this.state });
 		this.setState({ productCode: '', qty: '', price: '' });
+		this.props.createProduct({ ...this.state });
 	}
 
 	render() {
@@ -81,25 +80,10 @@ export default class NewProductForm extends Component {
 						decimalSeparator="."
 						placeholder="Please enter a number"
 						prefix="£"
-						defaultValue={1000}
 						decimalsLimit={2}
 						onValueChange={(value, name) => this.setState({ [name]: value })}
 					/>
 				</div>
-
-				{/* <div className="NewProductForm-price">
-					<label htmlFor="price">Price</label>
-					<input
-						className="input"
-						required
-						type="number"
-						placeholder="Price"
-						value={price}
-						id="price"
-						name="price"
-						onChange={this.handleChange}
-					/>
-				</div> */}
 
 				<button>Add Product</button>
 			</form>
