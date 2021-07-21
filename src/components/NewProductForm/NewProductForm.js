@@ -24,6 +24,7 @@ export default class NewProductForm extends Component {
 
 	handleSubmit(evt) {
 		evt.preventDefault();
+		console.log(evt.price);
 		this.props.createProduct({ ...this.state });
 		this.setState({ productCode: '', qty: '', price: '' });
 	}

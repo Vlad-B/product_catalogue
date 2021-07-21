@@ -15,11 +15,9 @@ export default class ProductList extends Component {
 	}
 
 	create(newProduct) {
-		console.log(newProduct.price);
 		const { productList, totalPrice } = this.state;
 		this.setState({
 			productList: [...productList, newProduct],
-			// totalPrice: [...totalPrice, parseInt(newProduct.price)],
 			totalPrice: [
 				...totalPrice,
 				parseFloat(newProduct.price.replace(/,/g, '.')),
